@@ -6,5 +6,6 @@ train (t-6g8vm6bv4m5kzjmk8omddfst6) {
 train (t-6z78agjbved4nn50oduou01k5) {
   utterance ("[g:Movie] (작년)[v:time.DateTimeExpression]에 (이병현)[v:PersonName]이 나온 영화는?")
   plan (Y2BjkCguzUstzUvXy80vy0x1TE/NK9HzBTEZZLDIuGXmpUBkJbHIBqQWFefnMcji0IhHGiLll5ibyiBdllmmV5KZm6rnkliSGgJkuFYUFKUWF2cC9bIyMDIwMTAzsABZDFA2IxAygDEIMAMxWBYA)
-  last-modified (1573610451063)
+  enabled (false)
+  last-modified (1573717171641)
 }

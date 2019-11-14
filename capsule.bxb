@@ -11,7 +11,7 @@ capsule {
     }
     import (viv.time) {
       as (time)
-      version (3.0.23)
+      version (3.0.52)
     }
   }
   store-sections {
