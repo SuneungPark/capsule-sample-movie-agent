@@ -2,6 +2,7 @@ var dates = require('dates')
 var http = require('http')
 var properties = require('./properties.js')
 var movieGenreMap = require('./movieGenreMap.js')
+// var console = require('console')
 
 module.exports = {
   discoverMovie: discoverMovie,
@@ -15,9 +16,11 @@ module.exports = {
 function discoverMovie(releaseDateTimeExpression, person, genre) {
   const url = "https://api.themoviedb.org/3/discover/movie"
   const query = {
-    "api_key": properties.get("secret", "apiKey")
+    "api_key": properties.get("secret", "apiKey"),
+    "language" : "ko"
   }
   if (releaseDateTimeExpression) {
+    // console.log('releaseDateTimeExpression value is', releaseDateTimeExpression)
     Object.assign(query, buildReleaseQuery(releaseDateTimeExpression))
   }
   if (person) {
@@ -37,7 +40,8 @@ function discoverMovie(releaseDateTimeExpression, person, genre) {
 function getConfiguration() {
   const url = "https://api.themoviedb.org/3/configuration"
   const query = {
-    "api_key": properties.get("secret", "apiKey")
+    "api_key": properties.get("secret", "apiKey"),
+    "language" : "ko"
   }
   const options = {
     "format": "json",
@@ -52,7 +56,8 @@ function getMovie(movie) {
   if (movie) {
     const url = "https://api.themoviedb.org/3/movie/" + movie.$id
     const query = {
-      "api_key": properties.get("secret", "apiKey")
+      "api_key": properties.get("secret", "apiKey"),
+      "language" : "ko"
     }
     const options = {
       "format": "json",
@@ -67,7 +72,8 @@ function getMovieCredits(movie) {
   if (movie) {
     const url = "https://api.themoviedb.org/3/movie/" + movie.$id + "/credits"
     const query = {
-      "api_key": properties.get("secret", "apiKey")
+      "api_key": properties.get("secret", "apiKey"),
+      "language" : "ko"
     }
     const options = {
       "format": "json",
@@ -88,7 +94,8 @@ function getTrendingMovies(dateTimeExpression) {
   if (dateTimeExpression["$type"] === inputType) {
     const url = "https://api.themoviedb.org/3/trending/movie/" + buildTrendingWindow(dateTimeExpression)
     const query = {
-      "api_key": properties.get("secret", "apiKey")
+      "api_key": properties.get("secret", "apiKey"),
+      "language" : "ko"
     }
     const options = {
       "format": "json",
@@ -105,7 +112,8 @@ function searchPerson(name) {
   if (name) {
     const url = "https://api.themoviedb.org/3/search/person"
     const query = {
-      "api_key": properties.get("secret", "apiKey")
+      "api_key": properties.get("secret", "apiKey"),
+      "language" : "ko"
     }
     if (name) {
       query["query"] = name
